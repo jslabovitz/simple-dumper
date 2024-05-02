@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'simple-dumper'
+
+Simple::Dumper.dump(ARGF.read)
