@@ -2,4 +2,10 @@
 
 require 'simple-dumper'
 
-Simple::Dumper.dump(ARGF.read)
+if ARGV.empty?
+  Simple::Dumper.dump(STDIN.read)
+else
+  ARGV.each do |arg|
+    Simple::Dumper.dump(File.read(arg), prefix: arg)
+  end
+end
